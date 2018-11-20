@@ -1,20 +1,18 @@
 delay 500
 
 *start
-わたしを お城まで 連れて
-帰ってくださいますのね？
+Please answer yeet or kobe
 gesture *yes, *no
 
 *yes
 delay 300
-うれしゅうございます。
-ぽっ…。
+You chose Yeet
 delay 1500
 goto *start
 
 *no
 delay 300
-そんな ひどい…。
+You chose Kobe
 delay 1500
 goto *start
 

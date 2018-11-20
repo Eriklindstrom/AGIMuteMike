@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using System.Collections;
 using FrameSynthesis.VR;
+using System;
 
 namespace ScriptExample
 {
     public class YesNo : MonoBehaviour
     {
+        //private IEnumerator DeactivateWindow;
+        [SerializeField] private GameObject MessageObject;
+
         [SerializeField]
         VRGesture vrGesture;
         [SerializeField]
@@ -24,6 +29,7 @@ namespace ScriptExample
             {
                 scriptEngine.AnswerYes();
                 gestureSound.Play();
+                StartCoroutine(DeactivateWindow(2.0f));
             }
         }
 
@@ -33,7 +39,13 @@ namespace ScriptExample
             {
                 scriptEngine.AnswerNo();
                 gestureSound.Play();
+                StartCoroutine(DeactivateWindow(1.0f));
             }
+        }
+        private IEnumerator DeactivateWindow(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            MessageObject.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

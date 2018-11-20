@@ -6,10 +6,17 @@ public class CameraRayCast : MonoBehaviour {
 
     private IEnumerator coroutine;
     [SerializeField] private GameObject TestLight;
+    [SerializeField] private GameObject MessageObject;
+    [SerializeField] private GameObject Clue1;
 
     private float hitTime;
 
-    private void Update()
+    void Start()
+    {
+       MeshRenderer MessageRend = MessageObject.GetComponent<MeshRenderer>();
+    }
+
+    void Update()
     {
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 8;
@@ -26,10 +33,9 @@ public class CameraRayCast : MonoBehaviour {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             //Debug.Log("Did Hit");
             hitTime += Time.deltaTime;
-            coroutine = HitAnObject(0.2f);
             if (hitTime > 2.0f)
             {
-                StartCoroutine(coroutine);
+                StartCoroutine(HitAnObject(0.2f));
                 //coroutineFlag = false;
             }
         }
@@ -38,6 +44,7 @@ public class CameraRayCast : MonoBehaviour {
             hitTime = 0.0f;
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             TestLight.SetActive(true);
+            //MessageObject.SetActive(false);
             Debug.Log("Did not Hit");
         }
     }
@@ -45,6 +52,8 @@ public class CameraRayCast : MonoBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
         TestLight.SetActive(false);
+        MessageObject.GetComponent<MeshRenderer>().enabled = true;
+        Clue1.SetActive(false);
         print("You looked at this object for 2 sec");
     }
 }
