@@ -7,6 +7,7 @@ public class CameraRayCast : MonoBehaviour {
     private IEnumerator coroutine;
     [SerializeField] private GameObject TestLight;
     [SerializeField] private GameObject MessageObject;
+    [SerializeField] private GameObject MessageWindow;
     [SerializeField] private GameObject Clue1;
 
     private float hitTime;
@@ -53,6 +54,7 @@ public class CameraRayCast : MonoBehaviour {
         yield return new WaitForSeconds(waitTime);
         TestLight.SetActive(false);
         MessageObject.GetComponent<MeshRenderer>().enabled = true;
+        MessageWindow.GetComponent<MeshRenderer>().enabled = true;
         Clue1.SetActive(false);
         print("You looked at this object for 2 sec");
     }

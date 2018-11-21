@@ -9,6 +9,9 @@ namespace ScriptExample
     {
         //private IEnumerator DeactivateWindow;
         [SerializeField] private GameObject MessageObject;
+        [SerializeField] private GameObject MessageWindow;
+
+        public ChangeVideo ChangeVideoScript;
 
         [SerializeField]
         VRGesture vrGesture;
@@ -46,6 +49,8 @@ namespace ScriptExample
         {
             yield return new WaitForSeconds(waitTime);
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
+            MessageWindow.GetComponent<MeshRenderer>().enabled = false;
+            ChangeVideoScript.PlayNewVideo();
         }
     }
 }
