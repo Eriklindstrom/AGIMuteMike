@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/HelloVR 1.unity
     guid: 965720ec42239744ab837ead4e0b88c9
+  - enabled: 0
+    path: Assets/Scenes/Fuse button test.unity
+    guid: 7d4b7499439792d45b992857e8ab1a18
   m_configObjects: {}
