@@ -23,6 +23,7 @@ namespace ScriptExample
         [SerializeField]
         AudioSource gestureSound;
 
+
         void Start()
         {
             vrGesture.NodHandler += OnNod;
