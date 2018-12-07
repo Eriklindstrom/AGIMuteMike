@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Text;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +12,9 @@ public class FusePointerCountDown : MonoBehaviour {
   public float timerDuration = 2f;
   // The loading circle bar
   public GameObject LoadingBar;
+
+  public VideoController videoController;
+  public ClickAreaController clickAreaController;
 
   // This value will count down from the duration
   private float lookTimer = 0f;
@@ -36,16 +41,6 @@ public class FusePointerCountDown : MonoBehaviour {
       // Does the ray intersect any objects excluding the player layer
       if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
       {
-          //coroutineFlag = true;
-          // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-          // Debug.Log("Did Hit");
-          // lookTimer += Time.deltaTime;
-          // coroutine = HitAnObject(0.2f);
-          // if (lookTimer > 2.0f)
-          // {
-          //     StartCoroutine(coroutine);
-          //     //coroutineFlag = false;
-          // }
 
           // If this button has been clicked once it can't be clicked again directly
           if (clickedOnce) {
@@ -54,7 +49,7 @@ public class FusePointerCountDown : MonoBehaviour {
 
           lookTimer += Time.deltaTime;
           LoadingBar.GetComponent<Image>().fillAmount = lookTimer/timerDuration;
-          Debug.Log("Gaze progress: " + LoadingBar.GetComponent<Image>().fillAmount*100 + "%");
+          // Debug.Log("Gaze progress: " + LoadingBar.GetComponent<Image>().fillAmount*100 + "%");
 
           if (lookTimer > timerDuration) {
               clickedOnce = true;
@@ -62,9 +57,14 @@ public class FusePointerCountDown : MonoBehaviour {
               lookTimer = 0f;
               // Debug.Log("BUTTON HAS BEEN SELECTED!");
 
-              // Get clickable area name and switch to its scene
+              // Get scene index from clickable area
               string areaName = hit.transform.name;
-              SceneManager.LoadScene(sceneName:areaName);
+              int sceneIndex = Int32.Parse(areaName.Substring(0,1));
+
+              // Change video and scene
+              hit.transform.parent.gameObject.SetActive(false);
+              clickAreaController.switchScene(sceneIndex);
+              videoController.ChangeVideo(sceneIndex);
           }
       }
       else

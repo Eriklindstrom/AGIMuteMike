@@ -14,7 +14,7 @@ namespace ScriptExample
         [SerializeField] private GameObject Blur;
         [SerializeField] private GameObject VideoPlayerObject;
 
-        public ChangeVideo ChangeVideoScript;
+        public VideoController videoController;
 
         [SerializeField]
         VRGesture vrGesture;
@@ -34,7 +34,7 @@ namespace ScriptExample
         {
             if (scriptEngine.IsYesNoWaiting)
             {
-                
+
                 scriptEngine.AnswerYes();
                 gestureSound.Play();
                 StartCoroutine(DeactivateWindow(2.0f));
@@ -45,7 +45,7 @@ namespace ScriptExample
         {
             if (scriptEngine.IsYesNoWaiting)
             {
-              
+
                 scriptEngine.AnswerNo();
                 gestureSound.Play();
                 StartCoroutine(DeactivateWindow(2.0f));
@@ -58,7 +58,7 @@ namespace ScriptExample
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;
-            ChangeVideoScript.PlayNewVideo();
+            videoController.ChangeVideo(0);
             gameObject.SetActive(false);
         }
     }
