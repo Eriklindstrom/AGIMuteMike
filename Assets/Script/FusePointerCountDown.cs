@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FusePointerCountDown : MonoBehaviour {
 
 	// How long to look at Menu Item before taking action
   public float timerDuration = 2f;
-  // UI text that change depending on button activated
-  public Text textUI;
   // The loading circle bar
   public GameObject LoadingBar;
 
@@ -61,11 +60,11 @@ public class FusePointerCountDown : MonoBehaviour {
               clickedOnce = true;
               LoadingBar.GetComponent<Image>().fillAmount = 0f;
               lookTimer = 0f;
-
-              // Do something
               // Debug.Log("BUTTON HAS BEEN SELECTED!");
-              Text activeButtonTxt = hit.transform.GetChild(0).GetComponent<Text>();
-              textUI.text = "Button clicked: " + activeButtonTxt.text;
+
+              // Get clickable area name and switch to its scene
+              string areaName = hit.transform.name;
+              SceneManager.LoadScene(sceneName:areaName);
           }
       }
       else
