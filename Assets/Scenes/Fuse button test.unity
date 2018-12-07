@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbf63f61c787864687c92f881fc3382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDuration: 2
+  timerDuration: 1
   textUI: {fileID: 1497861817}
   LoadingBar: {fileID: 264435403}
 --- !u!1 &1926409857
