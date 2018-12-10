@@ -52,19 +52,30 @@ public class FusePointerCountDown : MonoBehaviour {
           // Debug.Log("Gaze progress: " + LoadingBar.GetComponent<Image>().fillAmount*100 + "%");
 
           if (lookTimer > timerDuration) {
-              clickedOnce = true;
-              LoadingBar.GetComponent<Image>().fillAmount = 0f;
-              lookTimer = 0f;
-              // Debug.Log("BUTTON HAS BEEN SELECTED!");
+                clickedOnce = true;
+                LoadingBar.GetComponent<Image>().fillAmount = 0f;
+                lookTimer = 0f;
+                // Debug.Log("BUTTON HAS BEEN SELECTED!");
 
-              // Get scene index from clickable area
-              string areaName = hit.transform.name;
-              int sceneIndex = Int32.Parse(areaName.Substring(0,1));
+                if (hit.transform.tag == "SoundOnly")
+                {
+                    hit.transform.GetComponent<AudioSource>().Play(0);
+                }
+                else
+                {
+                    if(hit.transform.GetComponent<AudioSource>() != null)
+                    {
+                        hit.transform.GetComponent<AudioSource>().Play(0);
+                    }
+                    // Get scene index from clickable area
+                    string areaName = hit.transform.name;
+                    int sceneIndex = Int32.Parse(areaName.Substring(0, 1));
 
-              // Change video and scene
-              hit.transform.parent.gameObject.SetActive(false);
-              clickAreaController.switchScene(sceneIndex);
-              videoController.ChangeVideo(sceneIndex);
+                    // Change video and scene
+                    hit.transform.parent.gameObject.SetActive(false);
+                    clickAreaController.switchScene(sceneIndex);
+                    videoController.ChangeVideo(sceneIndex);
+                }
           }
       }
       else
@@ -82,4 +93,5 @@ public class FusePointerCountDown : MonoBehaviour {
       yield return new WaitForSeconds(waitTime);
       print("You looked at this object for 2 sec");
   }
+
 }
