@@ -6,7 +6,6 @@ using UnityEngine.Video;
 public class CameraRayCast : MonoBehaviour {
 
     private IEnumerator coroutine;
-    [SerializeField] private GameObject TestLight;
     [SerializeField] private GameObject MessageObject;
     [SerializeField] private GameObject MessageWindow;
     [SerializeField] private GameObject Blur;
@@ -55,15 +54,13 @@ public class CameraRayCast : MonoBehaviour {
         {
             hitTime = 0.0f;
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            TestLight.SetActive(true);
             //MessageObject.SetActive(false);
-            Debug.Log("Did not Hit");
+            //Debug.Log("Did not Hit");
         }
     }
     private IEnumerator HitAnObject(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        TestLight.SetActive(false);
         MessageObject.GetComponent<MeshRenderer>().enabled = true;
         MessageWindow.GetComponent<MeshRenderer>().enabled = true;
         Blur.GetComponent<MeshRenderer>().enabled = true;

@@ -239,15 +239,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168635804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15d1255e63f136a4aaa4bdca05a8e25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoClips:
-  - {fileID: 32900000, guid: e257e473727ae9342b998a600302fd47, type: 3}
-  - {fileID: 32900000, guid: 6fc4e5b62c8d18c41b1879b436dfd444, type: 3}
-  - {fileID: 32900000, guid: bcf32b1710d30a2458619dadd918fed0, type: 3}
+  videoClips: []
   fadeOutUIImage: {fileID: 69963036}
   fadeSpeed: 0.8
 --- !u!328 &168635806
@@ -256,7 +253,7 @@ VideoPlayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168635804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_VideoClip: {fileID: 32900000, guid: e257e473727ae9342b998a600302fd47, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
@@ -491,10 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be248d99dad25c4db7551d2f79a870a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  sceneList: []
 --- !u!1 &759075418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1307,7 @@ GameObject:
   - component: {fileID: 1723419169}
   - component: {fileID: 1723419172}
   - component: {fileID: 1723419173}
+  - component: {fileID: 1723419174}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1403,9 +1398,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723419168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abbf63f61c787864687c92f881fc3382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerDuration: 1.5
+  LoadingBar: {fileID: 264435403}
+  videoController: {fileID: 168635805}
+  clickAreaController: {fileID: 701892834}
+--- !u!114 &1723419174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723419168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7f8e4951e140046b9731e038501ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerDuration: 1.5

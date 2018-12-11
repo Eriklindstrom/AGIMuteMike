@@ -3,6 +3,7 @@ using System.Collections;
 using FrameSynthesis.VR;
 using System;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 namespace ScriptExample
 {
@@ -12,9 +13,13 @@ namespace ScriptExample
         [SerializeField] private GameObject MessageObject;
         [SerializeField] private GameObject MessageWindow;
         [SerializeField] private GameObject Blur;
-        [SerializeField] private GameObject VideoPlayerObject;
+        //[SerializeField] private GameObject VideoPlayerObject;
 
-        public VideoController videoController;
+        [SerializeField] private VideoPlayer videoPlayer;
+        public VideoClip[] videoClips;
+
+        //public VideoController videoController;
+
 
         [SerializeField]
         VRGesture vrGesture;
@@ -37,7 +42,7 @@ namespace ScriptExample
 
                 scriptEngine.AnswerYes();
                 gestureSound.Play();
-                StartCoroutine(DeactivateWindow(2.0f));
+                StartCoroutine(OnYes(0.0f));
             }
         }
 
@@ -48,18 +53,43 @@ namespace ScriptExample
 
                 scriptEngine.AnswerNo();
                 gestureSound.Play();
-                StartCoroutine(DeactivateWindow(2.0f));
+                StartCoroutine(OnNo(0.0f));
             }
         }
-        private IEnumerator DeactivateWindow(float waitTime)
+        private IEnumerator OnYes(float waitTime)
         {
-            yield return new WaitForSeconds(waitTime);
-            VideoPlayerObject.GetComponent<VideoPlayer>().Play();
+            videoPlayer.clip = videoClips[2];
+            
+
+
+            
+            //videoPlayer.Play();
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;
-            videoController.ChangeVideo(0);
+            //videoController.ChangeVideo(0);
+            //gameObject.SetActive(false);
+            yield return new WaitForSeconds(5.0f);
+            SceneManager.LoadScene(2);
+        }
+
+        private IEnumerator OnNo(float waitTime)
+        {
+
+            videoPlayer.clip = videoClips[1];
+
+            yield return new WaitForSeconds(waitTime);
+            //videoPlayer.Play();
+            MessageObject.GetComponent<MeshRenderer>().enabled = false;
+            MessageWindow.GetComponent<MeshRenderer>().enabled = false;
+            Blur.GetComponent<MeshRenderer>().enabled = false;
+            //videoController.ChangeVideo(0);
             gameObject.SetActive(false);
+            yield return new WaitForSeconds(5.0f);
+            MessageObject.GetComponent<MeshRenderer>().enabled = true;
+            MessageWindow.GetComponent<MeshRenderer>().enabled = true;
+            Blur.GetComponent<MeshRenderer>().enabled = true;
+
         }
     }
 }
