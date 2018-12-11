@@ -41,9 +41,10 @@ public class FusePointerCountDown : MonoBehaviour {
       // Does the ray intersect any objects excluding the player layer
       if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
       {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
-          // If this button has been clicked once it can't be clicked again directly
-          if (clickedOnce) {
+            // If this button has been clicked once it can't be clicked again directly
+            if (clickedOnce) {
               return;
           }
 
@@ -57,10 +58,17 @@ public class FusePointerCountDown : MonoBehaviour {
                 lookTimer = 0f;
                 // Debug.Log("BUTTON HAS BEEN SELECTED!");
 
+              
+
                 if (hit.transform.tag == "SoundOnly")
                 {
                     hit.transform.GetComponent<AudioSource>().Play(0);
                 }
+                else if (hit.transform.tag == "Play")
+                {
+                    SceneManager.LoadScene(1);
+                }
+
                 else
                 {
                     if(hit.transform.GetComponent<AudioSource>() != null)

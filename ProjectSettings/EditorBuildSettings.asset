@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HelloVR 1.unity
     guid: 965720ec42239744ab837ead4e0b88c9
   - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: aaa5722ee00760d4da6633da66aee54d
+  - enabled: 1
     path: Assets/Scenes/Demo.unity
     guid: 6690237b5f3f93940ac086ec641fb30d
   m_configObjects: {}
