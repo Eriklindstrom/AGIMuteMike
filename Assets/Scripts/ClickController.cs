@@ -64,10 +64,10 @@ public class ClickController : MonoBehaviour {
                 }
                 else
                 {
-                    if (hit.transform.GetComponent<AudioSource>() != null)
-                    {
-                        hit.transform.GetComponent<AudioSource>().Play(0);
-                    }
+                    // if (hit.transform.GetComponent<AudioSource>() != null)
+                    // {
+                    //     hit.transform.GetComponent<AudioSource>().Play(0);
+                    // }
                     // If special scene
                     if (areaName.Substring(0, 1).Equals("_"))
                     {
