@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Text;
@@ -52,25 +52,44 @@ public class ClickController : MonoBehaviour {
               // Get scene index from clickable area
               string areaName = hit.transform.name;
 
-              int sceneIndex;
-              string specialScene;
-              // If special scene
-              if (areaName.Substring(0,1).Equals("_")) {
-                  specialScene = areaName.Substring(1);
-                  gameController.switchScene(specialScene);
-              }
-              // If single number
-              else if (areaName.Substring(1,1).Equals(".")) {
-                  sceneIndex = Int32.Parse(areaName.Substring(0,1));
-                  hit.transform.parent.gameObject.SetActive(false);
-                  gameController.switchScene(sceneIndex);
-              }
-              // If double number
-              else {
-                  sceneIndex = Int32.Parse(areaName.Substring(0,2));
-                  hit.transform.parent.gameObject.SetActive(false);
-                  gameController.switchScene(sceneIndex);
-              }
+                int sceneIndex;
+                string specialScene;
+                if (hit.transform.tag == "SoundOnly")
+                {
+                    hit.transform.GetComponent<AudioSource>().Play(0);
+                }
+                else if (hit.transform.tag == "Play")
+                {
+                    SceneManager.LoadScene(1);
+                }
+
+                else
+                {
+                    if (hit.transform.GetComponent<AudioSource>() != null)
+                    {
+                        hit.transform.GetComponent<AudioSource>().Play(0);
+                    }
+                    // If special scene
+                    if (areaName.Substring(0, 1).Equals("_"))
+                    {
+                        specialScene = areaName.Substring(1);
+                        gameController.switchScene(specialScene);
+                    }
+                    // If single number
+                    else if (areaName.Substring(1, 1).Equals("."))
+                    {
+                        sceneIndex = Int32.Parse(areaName.Substring(0, 1));
+                        hit.transform.parent.gameObject.SetActive(false);
+                        gameController.switchScene(sceneIndex);
+                    }
+                    // If double number
+                    else
+                    {
+                        sceneIndex = Int32.Parse(areaName.Substring(0, 2));
+                        hit.transform.parent.gameObject.SetActive(false);
+                        gameController.switchScene(sceneIndex);
+                    }
+                }
           }
       }
       else

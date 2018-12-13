@@ -5,18 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: aaa5722ee00760d4da6633da66aee54d
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/GoogleVR/Demos/Scenes/HelloVR.unity
-    guid: bb36d2905dc634f1c9eecb35beecaca8
-  - enabled: 0
-    path: Assets/VRGesturing/ScriptExample/ScriptExample.unity
-    guid: c7efa4992f143f54091bb2f14d72a56b
-  - enabled: 0
-    path: Assets/Scenes/HelloVR 1.unity
-    guid: 965720ec42239744ab837ead4e0b88c9
   - enabled: 1
     path: Assets/Scenes/Demo.unity
     guid: 6690237b5f3f93940ac086ec641fb30d
