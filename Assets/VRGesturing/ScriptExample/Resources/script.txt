@@ -1,18 +1,18 @@
 delay 500
 
 *start
-Please answer yeet or kobe
+Please nod 'Yes' or shake 'No'
 gesture *yes, *no
 
 *yes
 delay 300
-You chose Yeet
+You chose Yes
 delay 1500
 goto *start
 
 *no
 delay 300
-You chose Kobe
+You chose No
 delay 1500
 goto *start
 
