@@ -589,15 +589,15 @@ MonoBehaviour:
   - {fileID: 32900000, guid: d7ff4750cecf2154c99bec6ebe2834e8, type: 3}
   - {fileID: 32900000, guid: 05bd3baf5e569364f8b4aa86c748344c, type: 3}
   - {fileID: 32900000, guid: 3fae9fc74cff5e1449bd28d50c2f6b54, type: 3}
-  specialVideo:
+  - {fileID: 32900000, guid: f6b3460102b05e842a5901623ac59aa2, type: 3}
+  replaceClips:
   - {fileID: 32900000, guid: f4874d61769d98c43a02a0a0f17c4685, type: 3}
   - {fileID: 32900000, guid: 33e5308d50ed7764ebc662eef6e0db86, type: 3}
-  - {fileID: 32900000, guid: f6b3460102b05e842a5901623ac59aa2, type: 3}
   - {fileID: 32900000, guid: 7e94ffce4b26c7042a06ed94931b7c47, type: 3}
   - {fileID: 32900000, guid: aefe9bcd8a0dd5d44aaa0a75619bd71d, type: 3}
   - {fileID: 32900000, guid: de0def61a11819e48bdcdd7c514af9a2, type: 3}
-  - {fileID: 32900000, guid: 1192a0f6a8e03cc44b5411372914640f, type: 3}
   - {fileID: 32900000, guid: 93bdd0006d07faa4ba9c0c9c7175fac6, type: 3}
+  - {fileID: 32900000, guid: 1192a0f6a8e03cc44b5411372914640f, type: 3}
   - {fileID: 32900000, guid: b56ccbdfbf47d7e459d586df2029d93d, type: 3}
   fadeOutUIImage: {fileID: 69963036}
   fadeSpeed: 0.8
