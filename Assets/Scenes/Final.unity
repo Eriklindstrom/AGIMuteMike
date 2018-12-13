@@ -3127,7 +3127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c279a4aa0569b4ca2a56c3960494df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDuration: 2
+  timerDuration: 1.5
   LoadingBar: {fileID: 264435403}
   gameController: {fileID: 1053716830}
 --- !u!1 &1734916786
