@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour {
 					Debug.Log("Found Key 2!");
 					hasKey2 = true;
 					// Change video in the video list to video without key
-					videoController.ReplaceVideo(8, 4);
+					videoController.ReplaceVideo(8, 5);
 					key2ClickZone.GetComponent<BoxCollider>().enabled = false;
 			}
 			else if (sceneIndex == "Radio On") {
@@ -72,14 +72,15 @@ public class GameController : MonoBehaviour {
 			}
 			else if (sceneIndex == "Erik" && erikAwake) {
 					Debug.Log("Talked with Erik!");
-					videoController.ReplaceVideo(4, 2);	// Replace room 2 video
-					videoController.ReplaceVideo(0, 3);	// Replace room 1 video
+					// ADD: Cinematic + deactivate click zone
+					videoController.ReplaceVideo(4, 3);	// Replace room 2 video
+					videoController.ReplaceVideo(0, 4);	// Replace room 1 video
 					letterClickZone.GetComponent<BoxCollider>().enabled = true;
 			}
 			else if (sceneIndex == "Discussion") {
 					Debug.Log("Listened to the discussion!");
-					videoController.ReplaceVideo(12, 6);	// Replace cinematic
-					videoController.ReplaceVideo(9, 5);	// Replace room 3 video
+					// ADD: Cinematic + deactivate click zone
+					videoController.ReplaceVideo(9, 7);	// Replace room 3 video
 			}
 
 			videoController.ChangeVideo(lastScene);
