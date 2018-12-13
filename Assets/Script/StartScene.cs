@@ -10,6 +10,7 @@ public class StartScene : MonoBehaviour {
     [SerializeField] private GameObject StartScreen;
     [SerializeField] private GameObject Credits;
     [SerializeField] private GameObject Back;
+    [SerializeField] private GameObject Audio;
 
     // How long to look at Menu Item before taking action
     public float timerDuration = 2f;
@@ -75,12 +76,14 @@ public class StartScene : MonoBehaviour {
                     StartScreen.SetActive(false);
                     Back.SetActive(true);
                     Credits.SetActive(true);
+                    Audio.SetActive(false);
                 }
                 else if (hit.transform.tag == "Back")
                 {
                     StartScreen.SetActive(true);
                     Back.SetActive(false);
                     Credits.SetActive(false);
+                    Audio.SetActive(true);
                 }
                 else if (hit.transform.tag == "Options")
                 {
