@@ -62,7 +62,6 @@ public class ClickController : MonoBehaviour {
                 {
                     SceneManager.LoadScene(1);
                 }
-
                 else
                 {
                     if (hit.transform.GetComponent<AudioSource>() != null)
