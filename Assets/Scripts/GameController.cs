@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour {
 
 	public void switchScene(string sceneIndex) {
 			// ADD: Special cases eg. cinematics
+			
 	}
 
 	public void foundKey(int keyNum) {
