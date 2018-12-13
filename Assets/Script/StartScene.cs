@@ -7,8 +7,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartScene : MonoBehaviour {
 
-	// How long to look at Menu Item before taking action
-  public float timerDuration = 2f;
+    [SerializeField] private GameObject StartScreen;
+    [SerializeField] private GameObject Credits;
+    [SerializeField] private GameObject Back;
+
+    // How long to look at Menu Item before taking action
+    public float timerDuration = 2f;
   // The loading circle bar
   public GameObject LoadingBar;
 
@@ -65,6 +69,23 @@ public class StartScene : MonoBehaviour {
                 else if (hit.transform.tag == "Play")
                 {
                     SceneManager.LoadScene(1);
+                }
+                else if (hit.transform.tag == "Credits")
+                {
+                    StartScreen.SetActive(false);
+                    Back.SetActive(true);
+                    Credits.SetActive(true);
+                }
+                else if (hit.transform.tag == "Back")
+                {
+                    StartScreen.SetActive(true);
+                    Back.SetActive(false);
+                    Credits.SetActive(false);
+                }
+                else if (hit.transform.tag == "Options")
+                {
+                    Debug.Log("Options");
+                    hit.transform.GetComponent<AudioSource>().Play();
                 }
 
                 else
