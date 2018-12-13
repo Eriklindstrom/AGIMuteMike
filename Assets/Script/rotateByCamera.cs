@@ -25,6 +25,20 @@ public class rotateByCamera : MonoBehaviour
 
         mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
 
+        mapPostList[1].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+        mapPostList[0].updateData(new Vector3(3.0f, -3.0f, 258.75f));
+
     }
 
     // Update is called once per frame
