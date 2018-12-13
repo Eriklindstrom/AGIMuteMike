@@ -39,6 +39,8 @@ namespace ScriptExample
 
         void OnNod()
         {
+            videoPlayer.clip = videoClips[0];
+            videoPlayer.Play();
             if (scriptEngine.IsYesNoWaiting)
             {
                 /*videoPlayer.Play();
@@ -66,6 +68,8 @@ namespace ScriptExample
 
         void OnHeadshake()
         {
+            videoPlayer.clip = videoClips[1];
+            videoPlayer.Play();
             if (scriptEngine.IsYesNoWaiting)
             {
                 videoPlayer.clip = videoClips[1];
@@ -81,6 +85,9 @@ namespace ScriptExample
         }
         private IEnumerator OnYes(float waitTime)
         {
+            MessageObject.SetActive(false);
+            MessageWindow.SetActive(false);
+            Blur.SetActive(false);
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;

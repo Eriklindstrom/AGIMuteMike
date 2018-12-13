@@ -12,6 +12,7 @@ public class ActivateOnVideoEnd : MonoBehaviour {
     [SerializeField] private GameObject MessageWindow;
     [SerializeField] private GameObject Blur;
 
+    //[SerializeField] private AudioSource videoPlayerSource;
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private GameObject YesNoGO;
     public VideoClip[] videoClips;
@@ -21,8 +22,8 @@ public class ActivateOnVideoEnd : MonoBehaviour {
 
     private bool ActivateFirstClip = false;
 
-  
-	
+
+
 	// Update is called once per frame
 	void Update () {
         //Activate only once
@@ -52,11 +53,15 @@ public class ActivateOnVideoEnd : MonoBehaviour {
 
     private IEnumerator WaitForFirstVideo()
     {
-        yield return new WaitForSeconds(30.0f); //30.0f
-
-        
-
         ActivateFirstClip = true;
+        yield return new WaitForSeconds(20.0f);
+        gameObject.GetComponent<AudioSource>().Play(0);
+        //Debug.Log("test");
+        yield return new WaitForSeconds(10.0f); //30.0f
+
+
+
+
         StartCoroutine(ActivateBlur());
 
         /*Debug.Log("testing");
