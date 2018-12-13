@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -6,7 +6,6 @@ using UnityEngine.Video;
 public class CameraRayCast : MonoBehaviour {
 
     private IEnumerator coroutine;
-    [SerializeField] private GameObject TestLight;
     [SerializeField] private GameObject MessageObject;
     [SerializeField] private GameObject MessageWindow;
     [SerializeField] private GameObject Blur;
@@ -63,7 +62,6 @@ public class CameraRayCast : MonoBehaviour {
     private IEnumerator HitAnObject(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        TestLight.SetActive(false);
         MessageObject.GetComponent<MeshRenderer>().enabled = true;
         MessageWindow.GetComponent<MeshRenderer>().enabled = true;
         Blur.GetComponent<MeshRenderer>().enabled = true;
