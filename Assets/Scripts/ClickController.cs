@@ -11,6 +11,7 @@ public class ClickController : MonoBehaviour {
   public float timerDuration = 2f;  // How long to look at Menu Item before taking action
   public GameObject LoadingBar;     // The loading circle bar
   public GameController gameController;
+  public rotateByCamera minimap;
 
   private float lookTimer = 0f;     // This value will count down from the duration
   private bool clickedOnce = false; // Bool to know when a button has been clicked once
@@ -81,6 +82,7 @@ public class ClickController : MonoBehaviour {
                         sceneIndex = Int32.Parse(areaName.Substring(0, 1));
                         hit.transform.parent.gameObject.SetActive(false);
                         gameController.switchScene(sceneIndex);
+                        minimap.changeRooms(sceneIndex);
                     }
                     // If double number
                     else
@@ -88,6 +90,7 @@ public class ClickController : MonoBehaviour {
                         sceneIndex = Int32.Parse(areaName.Substring(0, 2));
                         hit.transform.parent.gameObject.SetActive(false);
                         gameController.switchScene(sceneIndex);
+                        minimap.changeRooms(sceneIndex);
                     }
                 }
           }
