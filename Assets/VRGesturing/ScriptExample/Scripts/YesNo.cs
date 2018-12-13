@@ -13,9 +13,11 @@ namespace ScriptExample
         [SerializeField] private GameObject MessageObject;
         [SerializeField] private GameObject MessageWindow;
         [SerializeField] private GameObject Blur;
+        [SerializeField] private GameObject DrinkMessage;
         //[SerializeField] private GameObject VideoPlayerObject;
 
         [SerializeField] private VideoPlayer videoPlayer;
+        [SerializeField] private GameObject videoPlayerObject;
         public VideoClip[] videoClips;
 
         //public VideoController videoController;
@@ -39,10 +41,19 @@ namespace ScriptExample
         {
             if (scriptEngine.IsYesNoWaiting)
             {
+                videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
+
+                videoPlayer.clip = videoClips[0];
+                videoPlayer.Stop();
+                videoPlayer.Play();
 
                 scriptEngine.AnswerYes();
                 gestureSound.Play();
                 StartCoroutine(OnYes(0.0f));
+
+                videoPlayer.clip = videoClips[0];
+                videoPlayer.Stop();
+                videoPlayer.Play();
             }
         }
 
@@ -58,15 +69,22 @@ namespace ScriptExample
         }
         private IEnumerator OnYes(float waitTime)
         {
-            videoPlayer.clip = videoClips[2];
-            
-
-
-            
             //videoPlayer.Play();
+            MessageObject.SetActive(false);
+            MessageWindow.SetActive(false);
+            Blur.SetActive(false);
+            DrinkMessage.SetActive(true);
+
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;
+            videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
+
+            /*videoPlayer.clip = videoClips[0];
+            videoPlayer.Stop();
+            videoPlayer.Play();*/
+
+
             //videoController.ChangeVideo(0);
             //gameObject.SetActive(false);
             yield return new WaitForSeconds(5.0f);
@@ -77,15 +95,23 @@ namespace ScriptExample
         {
 
             videoPlayer.clip = videoClips[1];
+            videoPlayer.Stop();
+            videoPlayer.Play();
 
-            yield return new WaitForSeconds(waitTime);
             //videoPlayer.Play();
+            MessageObject.SetActive(false);
+            MessageWindow.SetActive(false);
+            Blur.SetActive(false);
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;
+            videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
             //videoController.ChangeVideo(0);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             yield return new WaitForSeconds(5.0f);
+            MessageObject.SetActive(true);
+            MessageWindow.SetActive(true);
+            Blur.SetActive(true);
             MessageObject.GetComponent<MeshRenderer>().enabled = true;
             MessageWindow.GetComponent<MeshRenderer>().enabled = true;
             Blur.GetComponent<MeshRenderer>().enabled = true;

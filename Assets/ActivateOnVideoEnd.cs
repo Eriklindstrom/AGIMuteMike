@@ -16,10 +16,17 @@ public class ActivateOnVideoEnd : MonoBehaviour {
 
     [SerializeField] private GameObject Image;
 
+    //public VideoClip[] videoClips;
+
     // Use this for initialization
     void Start () {
         //GestureController.SetActive(true);
         //ActivateBlur(0.0f);
+
+        /*videoPlayer.clip = videoClips[1];
+        videoPlayer.Stop();
+        videoPlayer.Play();
+        */
     }
 	
 	// Update is called once per frame
@@ -54,7 +61,7 @@ public class ActivateOnVideoEnd : MonoBehaviour {
 
     private IEnumerator WaitForFirstVideo()
     {
-        yield return new WaitForSeconds(0f); //28.0f
-        StartCoroutine(ActivateBlur());
+        yield return new WaitForSeconds(5.0f); //30.0f
+        //StartCoroutine(ActivateBlur());
     }
 }
