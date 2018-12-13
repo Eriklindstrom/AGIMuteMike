@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - HitableObject
+  - ActivateSound
   layers:
   - Default
   - TransparentFX

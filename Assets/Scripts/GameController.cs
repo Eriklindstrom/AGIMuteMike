@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
 	public GameObject key1ClickZone;
 	public GameObject key2ClickZone;
 	public GameObject letterClickZone;
+	public GameObject bodyClickZone;
 	public GameObject radioOnClickZone;
 
 	public VideoController videoController;
@@ -75,6 +76,7 @@ public class GameController : MonoBehaviour {
 					// ADD: Cinematic + deactivate click zone
 					videoController.ReplaceVideo(4, 3);	// Replace room 2 video
 					videoController.ReplaceVideo(0, 4);	// Replace room 1 video
+					bodyClickZone.GetComponent<BoxCollider>().enabled = false;
 					letterClickZone.GetComponent<BoxCollider>().enabled = true;
 			}
 			else if (sceneIndex == "Discussion") {
