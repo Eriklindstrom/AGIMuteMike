@@ -113,88 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &69159395
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 69159396}
-  - component: {fileID: 69159399}
-  - component: {fileID: 69159398}
-  - component: {fileID: 69159397}
-  m_Layer: 5
-  m_Name: _Key 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &69159396
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 69159395}
-  m_LocalRotation: {x: 0.028486516, y: 0.14723632, z: 0.18780412, w: 0.9706903}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
-  m_Children: []
-  m_Father: {fileID: 428310390}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 17.25, z: 21.9}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118.05, y: -68.68}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &69159397
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 69159395}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &69159398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 69159395}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &69159399
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 69159395}
-  m_CullTransparentMesh: 0
+<<<<<<< HEAD
+=======
+>>>>>>> parent of da8c3cd... Added locked door system
+=======
+>>>>>>> parent of da8c3cd... Added locked door system
 --- !u!1 &69963034
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,16 +293,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120708104}
-  m_LocalRotation: {x: -0.004962264, y: 0.32866433, z: -0.014257695, w: 0.94432616}
-  m_LocalPosition: {x: 0, y: 0, z: -65.1}
-  m_LocalScale: {x: 2.5, y: 0.8, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 772142110}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 38.38, z: -1.73}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 120.41, y: -77.74}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &120708106
@@ -590,12 +513,12 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 05bd3baf5e569364f8b4aa86c748344c, type: 3}
   - {fileID: 32900000, guid: 3fae9fc74cff5e1449bd28d50c2f6b54, type: 3}
   specialVideo:
-  - {fileID: 32900000, guid: f4874d61769d98c43a02a0a0f17c4685, type: 3}
+  - {fileID: 32900000, guid: 4d776bac15cad164f8f1f89e4e547104, type: 3}
   - {fileID: 32900000, guid: 33e5308d50ed7764ebc662eef6e0db86, type: 3}
-  - {fileID: 32900000, guid: f6b3460102b05e842a5901623ac59aa2, type: 3}
+  - {fileID: 32900000, guid: 1f938ca8500a23c4691e7ec5f6eeef6e, type: 3}
   - {fileID: 32900000, guid: 7e94ffce4b26c7042a06ed94931b7c47, type: 3}
   - {fileID: 32900000, guid: aefe9bcd8a0dd5d44aaa0a75619bd71d, type: 3}
-  - {fileID: 32900000, guid: de0def61a11819e48bdcdd7c514af9a2, type: 3}
+  - {fileID: 32900000, guid: 4ddb33683c9518c4bba6c450412604d0, type: 3}
   - {fileID: 32900000, guid: 1192a0f6a8e03cc44b5411372914640f, type: 3}
   - {fileID: 32900000, guid: 93bdd0006d07faa4ba9c0c9c7175fac6, type: 3}
   - {fileID: 32900000, guid: b56ccbdfbf47d7e459d586df2029d93d, type: 3}
@@ -942,16 +865,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 385294258}
-  m_LocalRotation: {x: 0, y: 0.46507382, z: 0, w: 0.8852719}
-  m_LocalPosition: {x: 0, y: 0, z: -94.7}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021017754}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 55.43, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 236.68, y: -88.7}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &385294260
@@ -962,7 +885,7 @@ BoxCollider:
   m_GameObject: {fileID: 385294258}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 100, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1191,7 +1114,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 69159396}
   - {fileID: 784248906}
   m_Father: {fileID: 165609535}
   m_RootOrder: 3
@@ -1413,7 +1335,7 @@ GameObject:
   - component: {fileID: 747489303}
   - component: {fileID: 747489302}
   m_Layer: 5
-  m_Name: _Key 1
+  m_Name: _Cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1425,16 +1347,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747489300}
-  m_LocalRotation: {x: 0.2424311, y: 0.42286444, z: -0.11850356, w: 0.8650837}
-  m_LocalPosition: {x: 0, y: 0, z: -120.96}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1327348386}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 31.31, y: 52.1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 223.28, y: -218.9}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &747489302
@@ -1758,7 +1680,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 428310390}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 22, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2101,13 +2023,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b6bbdae290aaa242b53e752a25c9e24, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_Name:
   m_EditorClassIdentifier:
   key1ClickZone: {fileID: 747489300}
   key2ClickZone: {fileID: 69159395}
   letterClickZone: {fileID: 2074921349}
   radioOnClickZone: {fileID: 1825484700}
+=======
+  m_Name:
+  m_EditorClassIdentifier:
+>>>>>>> parent of da8c3cd... Added locked door system
+=======
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of da8c3cd... Added locked door system
   videoController: {fileID: 168635805}
+  letterClickArea: {fileID: 2074921349}
   sceneList:
   - {fileID: 2076534997}
   - {fileID: 1327348385}
@@ -3763,7 +3696,7 @@ GameObject:
   - component: {fileID: 1825484703}
   - component: {fileID: 1825484702}
   m_Layer: 5
-  m_Name: _Radio On
+  m_Name: _Radio on
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

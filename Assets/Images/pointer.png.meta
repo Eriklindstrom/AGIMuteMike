@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: e68fff67172fe4c8e8fe785db80da8d3
 TextureImporter:
+<<<<<<< HEAD
+<<<<<<< HEAD
   fileIDToRecycleName: {}
+=======
+  fileIDToRecycleName:
+    2186277476908879412: ImportLogs
+>>>>>>> parent of da8c3cd... Added locked door system
+=======
+  fileIDToRecycleName:
+    2186277476908879412: ImportLogs
+>>>>>>> parent of da8c3cd... Added locked door system
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -99,6 +109,17 @@ TextureImporter:
     bones: []
     spriteID: 4d2ebdab6d351419e8215ca680aff4dd
     vertices: []
+<<<<<<< HEAD
+    indices:
+    edges: []
+    weights: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
+=======
     indices: 
     edges: []
     weights: []
@@ -108,3 +129,4 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+>>>>>>> parent of da8c3cd... Added locked door system
