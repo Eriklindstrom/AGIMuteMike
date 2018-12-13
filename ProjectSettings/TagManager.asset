@@ -7,6 +7,9 @@ TagManager:
   - HitableObject
   - SoundOnly
   - Play
+  - Credits
+  - Back
+  - Options
   layers:
   - Default
   - TransparentFX

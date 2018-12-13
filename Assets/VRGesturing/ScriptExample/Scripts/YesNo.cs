@@ -92,7 +92,7 @@ namespace ScriptExample
 
 
             //videoController.ChangeVideo(0);
-            //gameObject.SetActive(false);
+            //gameObject.SetActive(false);G
             yield return new WaitForSeconds(5.0f);
             SceneManager.LoadScene(2);
         }
