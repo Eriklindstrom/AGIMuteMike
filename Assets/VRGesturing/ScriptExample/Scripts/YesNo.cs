@@ -41,19 +41,26 @@ namespace ScriptExample
         {
             if (scriptEngine.IsYesNoWaiting)
             {
+                /*videoPlayer.Play();
+                videoPlayerObject.SetActive(false);
                 videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
 
                 videoPlayer.clip = videoClips[0];
                 videoPlayer.Stop();
+                videoPlayer.Play();
+                */
+
+                videoPlayer.clip = videoClips[0];
                 videoPlayer.Play();
 
                 scriptEngine.AnswerYes();
                 gestureSound.Play();
                 StartCoroutine(OnYes(0.0f));
 
-                videoPlayer.clip = videoClips[0];
+                /*videoPlayer.clip = videoClips[0];
                 videoPlayer.Stop();
                 videoPlayer.Play();
+                */
             }
         }
 
@@ -61,28 +68,27 @@ namespace ScriptExample
         {
             if (scriptEngine.IsYesNoWaiting)
             {
+                videoPlayer.clip = videoClips[1];
+                videoPlayer.Play();
+               
 
                 scriptEngine.AnswerNo();
                 gestureSound.Play();
                 StartCoroutine(OnNo(0.0f));
+
+              
             }
         }
         private IEnumerator OnYes(float waitTime)
         {
-            //videoPlayer.Play();
-            MessageObject.SetActive(false);
-            MessageWindow.SetActive(false);
-            Blur.SetActive(false);
-            DrinkMessage.SetActive(true);
-
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;
             videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
 
-            /*videoPlayer.clip = videoClips[0];
-            videoPlayer.Stop();
-            videoPlayer.Play();*/
+            //videoPlayer.clip = videoClips[0];
+            //videoPlayer.Stop();
+            //videoPlayer.Play();
 
 
             //videoController.ChangeVideo(0);
@@ -94,27 +100,30 @@ namespace ScriptExample
         private IEnumerator OnNo(float waitTime)
         {
 
-            videoPlayer.clip = videoClips[1];
-            videoPlayer.Stop();
-            videoPlayer.Play();
+            //videoPlayer.clip = videoClips[1];
+            //videoPlayer.Stop();
+            //videoPlayer.Play();
+            //videoPlayer.Play();
 
             //videoPlayer.Play();
-            MessageObject.SetActive(false);
-            MessageWindow.SetActive(false);
-            Blur.SetActive(false);
+            //MessageObject.SetActive(false);
+            //MessageWindow.SetActive(false);
+            //Blur.SetActive(false);
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;
             videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
             //videoController.ChangeVideo(0);
             //gameObject.SetActive(false);
-            yield return new WaitForSeconds(5.0f);
-            MessageObject.SetActive(true);
-            MessageWindow.SetActive(true);
-            Blur.SetActive(true);
+            yield return new WaitForSeconds(2.0f);
+            //MessageObject.SetActive(true);
+            //MessageWindow.SetActive(true);
+            //Blur.SetActive(true);
             MessageObject.GetComponent<MeshRenderer>().enabled = true;
             MessageWindow.GetComponent<MeshRenderer>().enabled = true;
             Blur.GetComponent<MeshRenderer>().enabled = true;
+            videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = true;
+
 
         }
     }

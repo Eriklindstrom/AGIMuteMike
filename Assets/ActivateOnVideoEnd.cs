@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ScriptExample;        //For getting the componentScript YesNo
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -12,29 +13,21 @@ public class ActivateOnVideoEnd : MonoBehaviour {
     [SerializeField] private GameObject Blur;
 
     [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private GameObject YesNoGO;
+    public VideoClip[] videoClips;
 
 
     [SerializeField] private GameObject Image;
 
-    //public VideoClip[] videoClips;
+    private bool ActivateFirstClip = false;
 
-    // Use this for initialization
-    void Start () {
-        //GestureController.SetActive(true);
-        //ActivateBlur(0.0f);
-
-        /*videoPlayer.clip = videoClips[1];
-        videoPlayer.Stop();
-        videoPlayer.Play();
-        */
-    }
+  
 	
 	// Update is called once per frame
 	void Update () {
-
-        //Really ugly
-        //WaitForFirstVideo();
-        StartCoroutine(WaitForFirstVideo());
+        //Activate only once
+        if(!ActivateFirstClip)
+            StartCoroutine(WaitForFirstVideo());
 
         /*if ((ulong)videoPlayer.frame == videoPlayer.frameCount)
         {
@@ -42,26 +35,32 @@ public class ActivateOnVideoEnd : MonoBehaviour {
             //Image.SetActive(true);
             StartCoroutine(ActivateBlur());
             //Image.SetActive(false);
-
         }*/
-
     }
 
     private IEnumerator ActivateBlur()
     {
         yield return new WaitForSeconds(0.0f);
-        videoPlayer.Pause();
+        //videoPlayer.Pause();
+        videoPlayer.Stop();     //Can't unpause video for some reason
         MessageObject.GetComponent<MeshRenderer>().enabled = true;
         MessageWindow.GetComponent<MeshRenderer>().enabled = true;
         Blur.GetComponent<MeshRenderer>().enabled = true;
-        //Clue1.SetActive(false);
-        GestureController.SetActive(true);
-        //print("You looked at this object for 2 sec");
+        GestureController.GetComponent<YesNo>().enabled = true;
+        //GestureController.SetActive(true);
     }
 
     private IEnumerator WaitForFirstVideo()
     {
-        yield return new WaitForSeconds(5.0f); //30.0f
-        //StartCoroutine(ActivateBlur());
+        yield return new WaitForSeconds(30.0f); //30.0f
+
+        
+
+        ActivateFirstClip = true;
+        StartCoroutine(ActivateBlur());
+
+        /*Debug.Log("testing");
+        videoPlayer.clip = videoClips[0];
+        videoPlayer.Play();*/
     }
 }
