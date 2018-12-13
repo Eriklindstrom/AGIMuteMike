@@ -54,7 +54,6 @@ public class CameraRayCast : MonoBehaviour {
         {
             hitTime = 0.0f;
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            TestLight.SetActive(true);
             //MessageObject.SetActive(false);
             Debug.Log("Did not Hit");
         }

@@ -5,7 +5,6 @@ using System.Text;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class StartScene : MonoBehaviour {
 
 	// How long to look at Menu Item before taking action
@@ -14,7 +13,6 @@ public class StartScene : MonoBehaviour {
   public GameObject LoadingBar;
 
   public VideoController videoController;
-  public ClickAreaController clickAreaController;
 
   // This value will count down from the duration
   private float lookTimer = 0f;
