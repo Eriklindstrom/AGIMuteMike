@@ -12,7 +12,7 @@ public class ClickController : MonoBehaviour {
   public GameObject LoadingBar;     // The loading circle bar
   public GameController gameController;
     //this is not good code But i base everything around the pointer
-  public GameObject pointer;
+
 
   private float lookTimer = 0f;     // This value will count down from the duration
   private bool clickedOnce = false; // Bool to know when a button has been clicked once
@@ -63,13 +63,12 @@ public class ClickController : MonoBehaviour {
                 {
                     SceneManager.LoadScene(1);
                 }
-
                 else
                 {
-                    if (hit.transform.GetComponent<AudioSource>() != null)
-                    {
-                        hit.transform.GetComponent<AudioSource>().Play(0);
-                    }
+                    // if (hit.transform.GetComponent<AudioSource>() != null)
+                    // {
+                    //     hit.transform.GetComponent<AudioSource>().Play(0);
+                    // }
                     // If special scene
                     if (areaName.Substring(0, 1).Equals("_"))
                     {
@@ -81,7 +80,7 @@ public class ClickController : MonoBehaviour {
                         sceneIndex = Int32.Parse(areaName.Substring(0, 1));
                         hit.transform.parent.gameObject.SetActive(false);
                         gameController.switchScene(sceneIndex);
-                        pointer.GetComponent<rotateByCamera>().changeRooms(sceneIndex);
+
                     }
                     // If double number
                     else
@@ -89,7 +88,7 @@ public class ClickController : MonoBehaviour {
                         sceneIndex = Int32.Parse(areaName.Substring(0, 2));
                         hit.transform.parent.gameObject.SetActive(false);
                         gameController.switchScene(sceneIndex);
-                        pointer.GetComponent<rotateByCamera>().changeRooms(sceneIndex);
+
                     }
                 }
           }

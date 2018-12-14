@@ -92,6 +92,11 @@ void Awake()
         videoPlayer.clip = videoClips[videoClipIndex];
     }
 
+    public void ChangeVideoNoFade(int videoClipIndex)
+    {
+        videoPlayer.clip = videoClips[videoClipIndex];
+    }
+
     public void ReplaceVideo(int videoClipIndex, int specialIndex) {
         videoClips[videoClipIndex] = specialVideo[specialIndex];
     }
