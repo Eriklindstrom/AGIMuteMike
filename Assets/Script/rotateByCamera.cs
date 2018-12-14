@@ -8,7 +8,7 @@ public class rotateByCamera : MonoBehaviour
     [SerializeField] private GameObject mCam;
     [SerializeField] private GameObject myCan;
     float initZrotation;
-    int currentRoom = 11;
+    int currentRoom = 0;
     int videoNumber = 12; 
     Quaternion rot;
     List<mapPositionData> mapPostList;
