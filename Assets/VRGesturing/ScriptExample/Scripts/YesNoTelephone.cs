@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace ScriptExample
 {
-    public class YesNo : MonoBehaviour
+    public class YesNoTelephone : MonoBehaviour
     {
         //private IEnumerator DeactivateWindow;
         [SerializeField] private GameObject MessageObject;
@@ -15,11 +15,12 @@ namespace ScriptExample
         [SerializeField] private GameObject Blur;
         [SerializeField] private GameObject DrinkMessage;
         //[SerializeField] private GameObject VideoPlayerObject;
+        [SerializeField] private GameObject OnOurWay;
 
         [SerializeField] private VideoPlayer videoPlayer;
         [SerializeField] private GameObject videoPlayerObject;
- 
-        public VideoClip[] videoClips;
+        [SerializeField] private GameController sceneSwitchGO;
+        //public VideoClip[] videoClips;
 
         //public VideoController videoController;
 
@@ -28,86 +29,73 @@ namespace ScriptExample
         VRGesture vrGesture;
         [SerializeField]
         ScriptEngine scriptEngine;
-        [SerializeField]
-        AudioSource gestureSound;
+        //[SerializeField]
+        //AudioSource gestureSound;
 
 
         void Start()
         {
             vrGesture.NodHandler += OnNod;
             vrGesture.HeadshakeHandler += OnHeadshake;
+
+            StartCoroutine(WaitForSeconds());
+            //MessageObject.SetActive(true);
+            //MessageWindow.SetActive(true);
+
+            MessageObject.GetComponent<MeshRenderer>().enabled = true;
+            MessageWindow.GetComponent<MeshRenderer>().enabled = true;
         }
 
         void OnNod()
         {
-            videoPlayer.clip = videoClips[0];
-            videoPlayer.Play();
+            //OnOurWay.SetActive(true);
+            //videoPlayer.clip = videoClips[0];
+            //videoPlayer.Play();
             if (scriptEngine.IsYesNoWaiting)
             {
-                /*videoPlayer.Play();
-                videoPlayerObject.SetActive(false);
-                videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
-
-                videoPlayer.clip = videoClips[0];
-                videoPlayer.Stop();
-                videoPlayer.Play();
-                */
-
-                videoPlayer.clip = videoClips[0];
-                videoPlayer.Play();
-
-                scriptEngine.AnswerYes();
-                gestureSound.Play();
-                StartCoroutine(OnYes(0.0f));
-
-                /*videoPlayer.clip = videoClips[0];
-                videoPlayer.Stop();
-                videoPlayer.Play();
-                */
+                OnOurWay.SetActive(true);
+                StartCoroutine(OnYes());
             }
         }
 
         void OnHeadshake()
         {
-            videoPlayer.clip = videoClips[1];
-            videoPlayer.Play();
             if (scriptEngine.IsYesNoWaiting)
             {
-                videoPlayer.clip = videoClips[1];
-                videoPlayer.Play();
+                //videoPlayer.clip = videoClips[0];
+                //videoPlayer.Play();
                
 
                 scriptEngine.AnswerNo();
-                gestureSound.Play();
+                //gestureSound.Play();
                 StartCoroutine(OnNo(0.0f));
 
               
             }
         }
-        private IEnumerator OnYes(float waitTime)
+
+        private IEnumerator WaitForSeconds()
+        {
+            yield return new WaitForSeconds(4.0f);
+        }
+        private IEnumerator OnYes()
         {
             MessageObject.SetActive(false);
             MessageWindow.SetActive(false);
-            Blur.SetActive(false);
+            //Blur.SetActive(false);
             MessageObject.GetComponent<MeshRenderer>().enabled = false;
             MessageWindow.GetComponent<MeshRenderer>().enabled = false;
             Blur.GetComponent<MeshRenderer>().enabled = false;
-            videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
+            //videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
 
-            //videoPlayer.clip = videoClips[0];
-            //videoPlayer.Stop();
-            //videoPlayer.Play();
-
-
-            //videoController.ChangeVideo(0);
-            //gameObject.SetActive(false);G
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(4.0f);
             SceneManager.LoadScene(2);
         }
 
         private IEnumerator OnNo(float waitTime)
         {
-
+            this.transform.parent.gameObject.SetActive(false);
+            sceneSwitchGO.switchScene(11);
             //videoPlayer.clip = videoClips[1];
             //videoPlayer.Stop();
             //videoPlayer.Play();
@@ -117,20 +105,20 @@ namespace ScriptExample
             //MessageObject.SetActive(false);
             //MessageWindow.SetActive(false);
             //Blur.SetActive(false);
-            MessageObject.GetComponent<MeshRenderer>().enabled = false;
-            MessageWindow.GetComponent<MeshRenderer>().enabled = false;
-            Blur.GetComponent<MeshRenderer>().enabled = false;
-            videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
+            //MessageObject.GetComponent<MeshRenderer>().enabled = false;
+            //MessageWindow.GetComponent<MeshRenderer>().enabled = false;
+            //Blur.GetComponent<MeshRenderer>().enabled = false;
+            //videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
             //videoController.ChangeVideo(0);
             //gameObject.SetActive(false);
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(0.5f);
             //MessageObject.SetActive(true);
             //MessageWindow.SetActive(true);
             //Blur.SetActive(true);
-            MessageObject.GetComponent<MeshRenderer>().enabled = true;
-            MessageWindow.GetComponent<MeshRenderer>().enabled = true;
-            Blur.GetComponent<MeshRenderer>().enabled = true;
-            videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = true;
+            //MessageObject.GetComponent<MeshRenderer>().enabled = true;
+            //MessageWindow.GetComponent<MeshRenderer>().enabled = true;
+            //Blur.GetComponent<MeshRenderer>().enabled = true;
+            //videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = true;
 
 
         }

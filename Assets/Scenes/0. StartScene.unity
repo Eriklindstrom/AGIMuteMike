@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3220744, g: 0.25132754, b: 0.20516661, a: 1}
+  m_IndirectSpecularColor: {r: 0.32206577, g: 0.2513267, b: 0.20514229, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1145,7 +1145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &701892834
 MonoBehaviour:
@@ -1246,7 +1246,7 @@ RectTransform:
   m_Children:
   - {fileID: 165609535}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2456,8 +2456,8 @@ GameObject:
   - component: {fileID: 1723419170}
   - component: {fileID: 1723419169}
   - component: {fileID: 1723419172}
-  - component: {fileID: 1723419174}
   - component: {fileID: 1723419173}
+  - component: {fileID: 1723419174}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
