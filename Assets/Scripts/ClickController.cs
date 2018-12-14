@@ -11,13 +11,14 @@ public class ClickController : MonoBehaviour {
   public float timerDuration = 2f;  // How long to look at Menu Item before taking action
   public GameObject LoadingBar;     // The loading circle bar
   public GameController gameController;
+    //this is not good code But i base everything around the pointer
+
 
   private float lookTimer = 0f;     // This value will count down from the duration
   private bool clickedOnce = false; // Bool to know when a button has been clicked once
 
   // MonoBehaviour Start
   void Start() {
-
   }
 
   // MonoBehaviour Update
@@ -72,7 +73,6 @@ public class ClickController : MonoBehaviour {
                     if (areaName.Substring(0, 1).Equals("_"))
                     {
                         specialScene = areaName.Substring(1);
-                        gameController.switchScene(specialScene);
                     }
                     // If single number
                     else if (areaName.Substring(1, 1).Equals("."))
@@ -80,6 +80,7 @@ public class ClickController : MonoBehaviour {
                         sceneIndex = Int32.Parse(areaName.Substring(0, 1));
                         hit.transform.parent.gameObject.SetActive(false);
                         gameController.switchScene(sceneIndex);
+
                     }
                     // If double number
                     else
@@ -87,6 +88,7 @@ public class ClickController : MonoBehaviour {
                         sceneIndex = Int32.Parse(areaName.Substring(0, 2));
                         hit.transform.parent.gameObject.SetActive(false);
                         gameController.switchScene(sceneIndex);
+
                     }
                 }
           }

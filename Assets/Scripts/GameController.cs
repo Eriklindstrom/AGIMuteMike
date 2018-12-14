@@ -11,8 +11,9 @@ public class GameController : MonoBehaviour {
 	public GameObject erikClickZone;
 	public GameObject UIkey1;
 	public GameObject UIkey2;
+    public GameObject pointer;
 
-	public VideoController videoController;
+    public VideoController videoController;
 	public AudioController audioController;
 	public GameObject[] sceneList;
 
@@ -40,6 +41,7 @@ public class GameController : MonoBehaviour {
 					Debug.Log("Locked!");
 					audioController.playSound(0);
 					sceneList[lastScene].SetActive(true);
+                
 			}
 			else {
 					// Different enter sounds depending on unlocking the door or not
@@ -63,7 +65,8 @@ public class GameController : MonoBehaviour {
 					videoController.ChangeVideo(sceneIndex);
 					lastScene = sceneIndex;
 			}
-	}
+        pointer.GetComponent<rotateByCamera>().changeRooms(sceneIndex);
+    }
 
 	// Special scenes (special cases)
 	public void switchScene(string sceneIndex) {
