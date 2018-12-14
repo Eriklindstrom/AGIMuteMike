@@ -64,13 +64,13 @@ namespace ScriptExample
             {
                 //videoPlayer.clip = videoClips[0];
                 //videoPlayer.Play();
-               
+
 
                 scriptEngine.AnswerNo();
                 //gestureSound.Play();
                 StartCoroutine(OnNo(0.0f));
 
-              
+
             }
         }
 
@@ -89,7 +89,7 @@ namespace ScriptExample
             //videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
 
             yield return new WaitForSeconds(4.0f);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene("4. Epilogue");
         }
 
         private IEnumerator OnNo(float waitTime)

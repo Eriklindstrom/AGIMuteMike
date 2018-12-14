@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
 	public GameObject letterClickZone;
 	public GameObject radioOnClickZone;
 	public GameObject erikClickZone;
+	public GameObject discussionClickZone;
 	public GameObject UIkey1;
 	public GameObject UIkey2;
     public GameObject pointer;
@@ -41,7 +42,7 @@ public class GameController : MonoBehaviour {
 					Debug.Log("Locked!");
 					audioController.playSound(0);
 					sceneList[lastScene].SetActive(true);
-                
+
 			}
 			else {
 					// Different enter sounds depending on unlocking the door or not
@@ -60,12 +61,26 @@ public class GameController : MonoBehaviour {
 							}
 					}
 
+					// Radio sound volume based on distance from radio
+					if (sceneIndex<3 || sceneIndex>7) {
+							audioController.changeVolume(3, 0f);
+					}
+					else if (sceneIndex==3 || sceneIndex==7) {
+							audioController.changeVolume(3, 0.1f);
+					}
+					else if (sceneIndex==4 || sceneIndex==6) {
+							audioController.changeVolume(3, 0.4f);
+					}
+					else if (sceneIndex==5) {
+							audioController.changeVolume(3, 1f);
+					}
+
 					// Debug.Log("Enter!");
+					pointer.GetComponent<rotateByCamera>().changeRooms(sceneIndex);
 					sceneList[sceneIndex].SetActive(true);
 					videoController.ChangeVideo(sceneIndex);
 					lastScene = sceneIndex;
 			}
-        pointer.GetComponent<rotateByCamera>().changeRooms(sceneIndex);
     }
 
 	// Special scenes (special cases)
@@ -96,6 +111,7 @@ public class GameController : MonoBehaviour {
 			}
 			else if (sceneIndex == "Radio On") {
 					Debug.Log("Radio turned on!");
+					audioController.playSound(3);
 					videoController.ReplaceVideo(4, 1);	// Replace room 2 video
 					radioOnClickZone.GetComponent<BoxCollider>().enabled = false;
 					erikAwake = true;
@@ -117,6 +133,8 @@ public class GameController : MonoBehaviour {
 			else if (sceneIndex == "Discussion") {
 					Debug.Log("Listened to the discussion!");
 					// ADD: Cinematic + deactivate click zone
+					audioController.playSound(4);
+					discussionClickZone.GetComponent<BoxCollider>().enabled = false;
 					videoController.ReplaceVideo(9, 7);	// Replace room 3 video
 					videoController.ChangeVideo(lastScene);
 			}

@@ -65,14 +65,11 @@ public class ClickController : MonoBehaviour {
                 }
                 else
                 {
-                    // if (hit.transform.GetComponent<AudioSource>() != null)
-                    // {
-                    //     hit.transform.GetComponent<AudioSource>().Play(0);
-                    // }
                     // If special scene
                     if (areaName.Substring(0, 1).Equals("_"))
                     {
                         specialScene = areaName.Substring(1);
+                        gameController.switchScene(specialScene);
                     }
                     // If single number
                     else if (areaName.Substring(1, 1).Equals("."))
@@ -88,7 +85,6 @@ public class ClickController : MonoBehaviour {
                         sceneIndex = Int32.Parse(areaName.Substring(0, 2));
                         hit.transform.parent.gameObject.SetActive(false);
                         gameController.switchScene(sceneIndex);
-
                     }
                 }
           }

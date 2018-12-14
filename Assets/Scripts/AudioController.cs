@@ -7,11 +7,11 @@ public class AudioController : MonoBehaviour {
 	public AudioSource[] audioList;
 
 	// List index legend
-	// 1. Locked door
-	// 2. Keys open door
-	// 3. Open door
-	// 4. Radio sound
-	// 5. Bell
+	// 0. Locked door
+	// 1. Keys open door
+	// 2. Open door
+	// 3. Radio sound
+	// 4. Bell
 
 	// Use this for initialization
 	void Start () {
@@ -25,5 +25,9 @@ public class AudioController : MonoBehaviour {
 
 	public void playSound(int audioIndex) {
 			audioList[audioIndex].Play(0);
+	}
+
+	public void changeVolume(int audioIndex, float newVolume) {
+			audioList[audioIndex].volume = newVolume;
 	}
 }
