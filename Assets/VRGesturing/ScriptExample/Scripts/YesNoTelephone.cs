@@ -89,7 +89,7 @@ namespace ScriptExample
             //videoPlayerObject.GetComponent<ActivateOnVideoEnd>().enabled = false;
 
             yield return new WaitForSeconds(4.0f);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
 
         private IEnumerator OnNo(float waitTime)
